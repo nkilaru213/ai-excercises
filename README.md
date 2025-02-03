@@ -1,5 +1,5 @@
 # ai-excercises
-README - Transfers, Admissions, Prescriptions, and Diagnoses Data Analysis
+README - Transfers, Admissions, Prescriptions, and Diagnoses Data Analysis using ICUSTAYS, LABEVENTS, D_LABITEMS, D_ICD_DIAGNOSES , DIAGNOSES_ICD
 
 ## Overview
 This repository contains Python scripts for analyzing hospital transfer records, admissions, prescriptions, and diagnoses using structured data. 
@@ -18,35 +18,28 @@ The analysis includes filtering patient data, extracting meaningful insights, an
 ## Key Code Components
 
 1. **Transfers Analysis**
-
-Filters admissions to include only Emergency, Elective, and Urgent cases.
-Determines the second most common discharge location.
+- Filters admissions to include only Emergency, Elective, and Urgent cases.
+- Determines the second most common discharge location.
 
 2. **Admissions Analysis**
-
-Analyzes admission trends by type.
-Computes length of stay statistics for different admission categories.
-Examines the most frequently used discharge locations.
+- Analyzes admission trends by type.
+- Computes length of stay statistics for different admission categories.
+- Examines the most frequently used discharge locations.
 
 3. **Prescriptions Analysis**
-
-Identifies the most commonly prescribed medications.
-Analyzes prescription dosage patterns and frequency of drug administration.
-Evaluates medication trends based on admission types.
+- Identifies the most commonly prescribed medications.
+- Analyzes prescription dosage patterns and frequency of drug administration.
+- Evaluates medication trends based on admission types.
 
 4. **Patients Analysis**
-
-Examines age distributions across different hospitalizations.
-Analyzes mortality rates within the dataset.
-Identifies trends related to patient demographics.
-
+- Examines age distributions across different hospitalizations.
+- Analyzes mortality rates within the dataset.
+- Identifies trends related to patient demographics.
 5. **Lab Item Extraction**
-
-Identifies glucose-related blood tests from lab records.
+- Identifies glucose-related blood tests from lab records.
 
 6. **ICD Diagnoses Processing**
-
-Loads ICD-9 diagnoses from CSV files.
+- Loads ICD-9 diagnoses from CSV files.
 
 ## How to Use
 1. Load the dataset files into the appropriate directory.
