@@ -1,5 +1,15 @@
 # ai-excercises
-README - Transfers, Admissions, Prescriptions, and Diagnoses Data Analysis using ICUSTAYS, LABEVENTS, D_LABITEMS, D_ICD_DIAGNOSES , DIAGNOSES_ICD
+These exercise include the data analysis using the tables 
+1. TRANSFERS
+2. ADMISSIONS
+3. PRESCRIPTIONS and
+
+Diagnoses Data Analysis using the tables 
+1. ICUSTAYS
+2. LABEVENTS
+3. D_LABITEMS
+4. D_ICD_DIAGNOSES
+5. DIAGNOSES_ICD
 
 ## Overview
 This repository contains Python scripts for analyzing hospital transfer records, admissions, prescriptions, and diagnoses using structured data. 
