@@ -1,0 +1,82 @@
+ 
+Executive summary
+We will compare GitHub Copilot (baseline) with four emerging agentic coding tools—Cline, Claude Code, AWS Kiro, and Google Jules—using three hands-on scenarios. The aim is to show practical outcomes, not just features: setup friction, code quality, safety, and enterprise fit.
+ 
+Scope & audience
+•	Audience: Engineering leadership, platform, and app dev teams
+•	Outcome: pick 1–2 tools for a time-boxed pilot alongside Copilot
+ 
+Platforms (1-liners)
+•	GitHub Copilot – ubiquitous AI pair programmer in IDEs, now with tiered plans (Business/Enterprise) and model options (e.g., GPT-4.1, Claude Sonnet) and consumption controls. (GitHub, GitHub Docs)
+•	Cline – an autonomous coding agent inside VS Code that plans multi-step changes, edits files, runs commands, and can use external tools via MCP; you choose the underlying model. Also widely adopted in the VS Code marketplace. (cline.bot, Visual Studio Marketplace)
+•	Claude Code – Anthropic’s agentic terminal assistant embedding Claude Opus 4.1; deep codebase awareness, can edit files and run commands directly in your environment. (Anthropic)
+•	AWS Kiro – a spec-driven, agentic AI IDE that turns prompts into structured requirements, designs, tasks, tests, and code (positioned for prototype-to-production). (Kiro, builder.aws.com)
+•	Google Jules – an asynchronous coding agent that works against your repo, produces PRs (tests/fixes/features), and recently added a “critic” step to improve code quality; uses Gemini models. (blog.google, IT Pro)
+ 
+Evaluation method (use this slide to anchor fairness)
+We will apply the same prompts, repos, and success criteria:
+1.	Setup & access – time to first result; required permissions/integrations
+2.	Prompt fidelity – does the output match the request without hand-holding?
+3.	Code quality & safety – readability, tests, security checks, dependency hygiene
+4.	Agentic execution – ability to plan, run tasks, modify files/PR flow
+5.	Enterprise fit – identity/governance, data handling, auditability, price/limits
+ 
+Demo scenarios (example-driven)
+Scenario A — CLI CSV Sorter (baseline task)
+Prompt (identical across tools):
+“Create a CLI tool that sorts a CSV by a specified column, supports ascending/descending, handles missing values, and includes a --dry-run mode. Include unit tests and usage docs.”
+What to capture:
+•	Setup time to first run; test pass rate; flags implemented; error handling quality; size of diff/PR; any security or lint findings.
+What to expect by tool:
+•	Cline / Claude Code: will typically scaffold, run tests, iterate via terminal/agent. (Anthropic, cline.bot)
+•	Jules: will open a PR with code + tests asynchronously. (blog.google, IT Pro)
+•	Kiro: emphasizes spec → tasks → tests → code flow. (Kiro)
+•	Copilot: inline completions + chat; faster for small utilities, less autonomous. (GitHub)
+Scenario B — Interactive Web App (forms & validation)
+Prompt:
+“Build a minimal web app with a form (name/email/age), client + server validation, and a ‘submissions’ list; include a README with run & deploy steps.”
+Capture: framework choice, correctness of validation, DX (does the tool run commands, fix errors), PR/package hygiene.
+Scenario C — Mobile Todo App with Dynamic Priorities
+Prompt:
+“Create a mobile todo app that re-prioritizes tasks based on due date and estimated effort; include tests and a short architecture note.”
+Capture: how the agent decomposes tasks, test coverage, correctness of priority logic.
+ 
+Side-by-side comparison
+Criterion	Copilot	Cline	Claude Code	AWS Kiro	Google Jules
+Setup to first result	IDE plugin; org controls via Business/Enterprise. (GitHub Docs)
+VS Code extension; point to model/API key. (Visual Studio Marketplace)
+CLI/terminal workflow. (Anthropic)
+Download IDE / connect repo. (Kiro)
+Connect GitHub repo; runs asynchronously. (Jules)
+
+Agentic behavior	Inline/chat, not fully autonomous	Plans, edits files, runs commands, uses tools (MCP)	Runs commands & edits in your env	Spec→tasks→tests→code (agentic)	Opens PRs; async tasks; critic step
+Output mode	Edits in IDE	Edits + terminal actions	Terminal edits/exec	IDE with structured flow	Pull Requests (safe review)
+Security posture	Enterprise SKUs/controls & request limits	Model choice is user-controlled; review diffs	Runs locally; reviewable	Cloud IDE posture; review diffs/tests	PR-first workflow reduces unreviewed changes
+Licensing / limits	Business $19, Enterprise $39 puser/mo; new consumptive billing nuances. (GitHub Docs, The GitHub Blog)
+OSS extension; model usage billed to your provider	Anthropic product (pricing via Claude plans) (Anthropic)
+Vendor pricing; positioned as full IDE (builder.aws.com)
+Free tier with daily task cap; paid tiers expand. (IT Pro)
+
+Ideal fit (hypothesis)	Rapid autocomplete & chat in IDE	Multi-step local automation on repos	Deep terminal-driven devops & refactors	Greenfield feature builds with specs	Safe background work on existing repos
+(Adjust the “fit” row after your demos.)
+ 
+Risks & mitigations 
+•	Model/agent drift – lock prompts, track versions; use template repos for demos
+•	Security/data – prefer PR-first tools (Jules), or local-agent modes (Cline/Claude Code) for sensitive code; review enterprise terms for Copilot/Jules/Kiro. (GitHub Docs)
+•	Change management – standardize prompts, share “what good looks like” examples
+•	Cost clarity – Copilot has clear per-seat pricing; agentic tools may shift cost to API usage—budget guardrails & observability. (GitHub Docs)
+ 
+Pilot plan (2–4 weeks)
+1.	Pick two teams and one scenario each (A/B/C)
+2.	Run the same prompt on all five tools; keep a small rubric (time-to-first-result, PR size, tests, defects)
+3.	Weekly readout with screenshots and PR links
+4.	Decision: adopt 1–2 tools for a longer trial; document prompt patterns that worked best
+ 
+Appendix: Source links
+•	Cline (site) & marketplace entry. (cline.bot, Visual Studio Marketplace)
+•	Claude Code product & docs. (Anthropic, Anthropic)
+•	AWS Kiro product descriptions. (Kiro, builder.aws.com)
+•	Google Jules site & announcement. (Jules, blog.google)
+•	GitHub Copilot plans/pricing. (GitHub, GitHub Docs, The GitHub Blog)
+ 
+
